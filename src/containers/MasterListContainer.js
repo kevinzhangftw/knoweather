@@ -4,7 +4,7 @@ import MasterListView from '../components/MasterListView'
 export default class MasterListContainer extends React.Component {
   render() {
     return (
-      <MasterListView/>
+      <MasterListView navigation={this.props.navigation}/>
     )
   }
 }

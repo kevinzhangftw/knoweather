@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, Button } from 'react-native'
 
 const styles = StyleSheet.create({
   container: {
@@ -15,6 +15,10 @@ export default class MasterListView extends React.Component {
     return (
       <View style={styles.container}>
         <Text>MasterListView</Text>
+        <Button
+          title="Go to Details"
+          onPress={() => this.props.navigation.navigate('Details')}
+        />
       </View>
     )
   }
