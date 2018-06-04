@@ -1,6 +1,5 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import { createStackNavigator } from 'react-navigation'
 
 const styles = StyleSheet.create({
   container: {
@@ -11,19 +10,14 @@ const styles = StyleSheet.create({
   },
 })
 
-class MasterListContainer extends React.Component {
+export default class MasterListView extends React.Component {
   render() {
     return (
-      <View>
+      <View style={styles.container}>
         <Text>MasterListView</Text>
       </View>
     )
   }
 }
 
-export default createStackNavigator({
-  Home: {
-    screen: MasterListContainer
-  },
-})
 
