@@ -1,12 +1,10 @@
 import React from 'react'
-import MasterListView from '../components/MasterListView'
+import DetailView from '../components/DetailView'
 
 export default class MasterListContainer extends React.Component {
   render() {
     return (
-      <MasterListView/>
+      <DetailView/>
     )
   }
 }
-
-
