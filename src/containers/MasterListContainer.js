@@ -18,8 +18,8 @@ export default class MasterListContainer extends React.Component {
   render() {
     return (
       <MasterListView
-      navigation={this.props.navigation}
-      data={responsedata}
+        navigation={this.props.navigation}
+        data={responsedata}
       />
     )
   }
