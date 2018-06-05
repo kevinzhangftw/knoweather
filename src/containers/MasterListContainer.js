@@ -24,8 +24,9 @@ class MasterListContainer extends React.Component {
 	}
 
   render() {
-    const { list } = this.props
-    console.log('list is:', list)
+    console.log('props is:', this.props)
+    const { jobs } = this.props
+    console.log('jobs is:', jobs)
     return (
       <MasterListView
         navigation={this.props.navigation}
@@ -37,11 +38,11 @@ class MasterListContainer extends React.Component {
 
 MasterListContainer.propTypes = {
   dispatch: PropTypes.func,
-  weather: PropTypes.arrayOf(PropTypes.object)
+  weather: PropTypes.object
 }
 
 const mapStateToProps = (state, ownProps) => ({
-  weather: getWeather(state)
+  weather: state
 })
 
 export default connect(mapStateToProps)(MasterListContainer)
