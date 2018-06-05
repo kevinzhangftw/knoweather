@@ -1,5 +1,11 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+
+import { fetchWeather } from '../actions/weatheractions'
+import { getWeather } from '../selectors/weatherselectors'
 import MasterListView from '../components/MasterListView'
+
 
 const responsedata = [
   {key: 'Devin'},

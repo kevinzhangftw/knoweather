@@ -17,6 +17,7 @@ const store = redux.createStore(
 
 export default class App extends React.Component {
   render() {
+    console.log('==========Weather:', this.props.weatherreducer)
     return (
       <Provider store={store}>
         <RootStack />
