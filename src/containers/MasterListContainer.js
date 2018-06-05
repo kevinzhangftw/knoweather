@@ -6,7 +6,6 @@ import { fetchWeather } from '../actions/weatheractions'
 import { getWeather } from '../selectors/weatherselectors'
 import MasterListView from '../components/MasterListView'
 
-
 const responsedata = [
   {key: 'Devin'},
   {key: 'Jackson'},
@@ -18,10 +17,15 @@ const responsedata = [
   {key: 'Julie'},
 ]
 
-
-export default class MasterListContainer extends React.Component {
+class MasterListContainer extends React.Component {
+  componentDidMount() {
+		const { dispatch } = this.props
+		dispatch(fetchWeather())
+	}
 
   render() {
+    const { list } = this.props
+    console.log('list is:', list)
     return (
       <MasterListView
         navigation={this.props.navigation}
@@ -30,5 +34,16 @@ export default class MasterListContainer extends React.Component {
     )
   }
 }
+
+MasterListContainer.propTypes = {
+  dispatch: PropTypes.func,
+  weather: PropTypes.arrayOf(PropTypes.object)
+}
+
+const mapStateToProps = (state, ownProps) => ({
+  weather: getWeather(state)
+})
+
+export default connect(mapStateToProps)(MasterListContainer)
 
 

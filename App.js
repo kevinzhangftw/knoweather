@@ -8,7 +8,7 @@ import RootStack from './src/RootStack'
 import reducers from './src/reducers'
 
 
-config.apiUrl = 'http://api.openweathermap.org/data/2.5/find?lat=55.5&lon=37.5&cnt=10'
+config.apiUrl = 'http://samples.openweathermap.org/data/2.5/box/city?bbox=12,32,15,37,10&appid=b6907d289e10d714a6e88b30761fae22'
 
 const store = redux.createStore(
 	reducers,
@@ -17,7 +17,6 @@ const store = redux.createStore(
 
 export default class App extends React.Component {
   render() {
-    console.log('==========Weather:', this.props.weatherreducer)
     return (
       <Provider store={store}>
         <RootStack />
